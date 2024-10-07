@@ -1,3 +1,22 @@
+let id= "Software Engineering UCI 1018: MERN"
+
+// hoist 
+//Function Declaration then Function Expression
+//fuDeclaration()
+//funExpression()
+//Arrow Functions 
+//Return true if planet argument is either "true" othewise return false
+
+
+
+
+
+
+
+
+
+
+
 // The provided course information.
 const CourseInfo = {
     id: 451,
