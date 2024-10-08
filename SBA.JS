@@ -8,9 +8,45 @@ let id= "Software Engineering UCI 1018: MERN"
 //Return true if planet argument is either "true" othewise return false
 
 
+const person = {
+    name: 'Terence Gragston',
+    age: 42,
+    job: 'Engineer'
+};
+
+const values = Object.values(person);
+console.log(values);
 
 
 
+let name =  "Terence Gragston"
+const func1 = function () {}
+
+const object = {
+  func2: function () {},
+};
+
+console.log(func1.name);
+// Expected output: "Terence Gragston"
+
+console.log(object.func2.name);
+// Expected output: "func2"
+//Name
+
+
+
+//Time
+
+const now = new Date();
+
+const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+const timeOptions = { hour: 'numeric', minute: 'numeric', second: 'numeric', timeZoneName: 'short' };
+
+const formattedDate = now.toLocaleDateString(undefined, dateOptions);
+const formattedTime = now.toLocaleTimeString(undefined, timeOptions);
+
+console.log(formattedDate);
+console.log(formattedTime); 
 
 
 
@@ -104,6 +140,7 @@ const CourseInfo = {
         1: 0.94, // 47 / 50
         2: 1.0 // 150 / 150
       },
+      // 
       {
         id: 132,
         avg: 0.82, // (39 + 125) / (50 + 150)
@@ -111,6 +148,19 @@ const CourseInfo = {
         2: 0.833 // late: (140 - 15) / 150
       }
     ];
+
+    function calculateAverage(numbers) {
+        if (numbers.length === 0) {
+          return 0; 
+        }
+      
+        let sum = 0;
+        for (let i = 0; i < numbers.length; i++) {
+          sum += numbers[i];
+        }
+      
+        return sum / numbers.length;
+      }
   
     return result;
   }
