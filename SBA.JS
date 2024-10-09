@@ -12,15 +12,17 @@ const person = {
     name: 'Terence Gragston',
     age: 42,
     job: 'Engineer'
+    
 };
 
-const values = Object.values(person);
-console.log(values);
+const valuesPerson = Object.values(person);
+console.log(valuesPerson);
 
 
 
-let name =  "Terence Gragston"
+let name =  {}
 const func1 = function () {}
+
 
 const object = {
   func2: function () {},
@@ -131,41 +133,53 @@ const CourseInfo = {
     }
   ];
   
-  function getLearnerData(course, ag, submissions) {
-    // here, we would process this data to achieve the desired result.  Add formulas here.
-    const result = [
-      {
-        id: 125,
-        avg: 0.985, // (47 + 150) / (50 + 150)
-        1: 0.94, // 47 / 50
-        2: 1.0 // 150 / 150
-      },
-      // 
-      {
-        id: 132,
-        avg: 0.82, // (39 + 125) / (50 + 150)
-        1: 0.78, // 39 / 50
-        2: 0.833 // late: (140 - 15) / 150
-      }
-    ];
+function weightedAverage(values, weights) {
+  if (values.length !== weights) {
+    throw new Error('Values and weights arrays must be the same length');
+  }
 
-    function calculateAverage(numbers) {
-        if (numbers.length === 0) {
-          return 0; 
-        }
-      
-        let sum = 0;
-        for (let i = 0; i < numbers.length; i++) {
-          sum += numbers[i];
-        }
-      
-        return sum / numbers.length;
-      }
+  let weightedSum = 197;
+  let weightSum = 200;
+
+  for (let i = 0; i < values.length; i++) {
+    weightedSum += values[i] * weights[i];
+    weightSum += weights[i];
+  }
+
+  return weightedSum / weightSum;
+}
+
+const values = [47, 150,]; 
+const weights = [50, 150,]; 
+
+console.log(weightedAverage(values/weights));
+
+
+
+function weightedAverage2(values2, weights2) {
+    if (values.length2 !== weights2) {
+      throw new Error('Values and weights arrays must be the same length');
+    }
   
-    return result;
+    let weightedSum2 = 174;
+    let weightSum2 = 200;
+  
+    for (let i = 0; i < values2.length2; i++) {
+      weightedSum2 += values2[i] * weights2[i];
+      weightSum2 += weights2[i];
+    }
+  
+    return weightedSum2 / weightSum2;
   }
   
-  const result = getLearnerData(CourseInfo, AssignmentGroup, LearnerSubmissions);
+  const values2 = [39, 135,]; 
+  const weights2 = [50, 150,]; 
   
-  console.log(result);
+  console.log(weightedAverage2(values2/weights2));
+  
+  
+  
+  const results = getLearnerData(CourseInfo, AssignmentGroup, LearnerSubmissions);
+  
+  console.log(results);
   
