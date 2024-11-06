@@ -102,9 +102,22 @@ const CourseInfo = {
       }
     ]
   };
- 
+const totalPointsArray =[];
+//const points_possible = AssignmentGroup.assignments[0].points_possible; 
+//Step 1 - Access the Data
 
 
+const points_possible = AssignmentGroup.assignments;
+console.log(points_possible+"IamThePointsPossible");
+//Step 2 - Use the Data
+
+points_possible.forEach ((grade)=> {
+//  console.log(grade.points_possible);
+let individualGrade = grade.points_possible;
+totalPointsArray.push(individualGrade);
+
+});
+console.log(totalPointsArray);
 
   // The provided learner submission data.
   const LearnerSubmissions = [
@@ -156,17 +169,22 @@ let total = 0;
 let getAverage = 0;
 
 for (let i=0; i <gradesLearner1; i++) {
-  total += grades[i];
+  //total += gradesLearner1[i];
+  //console.log(gradesLearner1[i]);
+//console.log(totalPointsArray);  
+  
+
 }
+
 
 for (let i=0; i <gradesLearner2; i++) {
-  total += grades[i];
+  total += gradesLearner2[i];
 }
   
-getAverage = total / grades.length;
+getAverage = total / gradesLearner1.length;
 
-console.log("Possible Points: ", total);
-console.log("Average grade: ", average);
+//console.log("Possible Points: ", total);
+//console.log("Average grade: ", average);
 
 const today = new Date ();
 for (const name of submission) {
@@ -183,7 +201,7 @@ for (const name of submission) {
   function getLearnerData(course, ag, submissions) {}
     // here, we would process this data to achieve the desired result.  Add formulas here.
 
-    function getAverage () {}
+    function inputAverage () {}
     const result = [
       {
         id: 125,
